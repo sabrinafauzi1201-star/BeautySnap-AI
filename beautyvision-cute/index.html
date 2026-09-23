@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ms">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BeautySnap AI</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+
+    <!-- Teachable Machine -->
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+</head>
+
+<body>
+
+    <!-- ==============================
+         HEADER
+    =============================== -->
+
+    <header>
+
+        <div class="logo">
+
+            <div class="heart">
+                ♡
+            </div>
+
+            <div>
+                <b>BeautySnap AI</b>
+                <small>AI COSMETIC CLASSIFICATION</small>
+            </div>
+
+        </div>
+
+        <div class="status">
+
+            <i id="dot"></i>
+
+            <span id="status">
+                Menyambung AI...
+            </span>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==============================
+         MAIN
+    =============================== -->
+
+    <main>
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="tag">
+                🎀 SMART BEAUTY TECHNOLOGY
+            </div>
+
+            <h1>
+                Kenali produk<br>
+                <em>kosmetik dengan AI</em> ✨
+            </h1>
+
+            <p>
+                Gunakan webcam atau upload gambar produk kosmetik
+                untuk mendapatkan prediction daripada sistem AI.
+            </p>
+
+        </section>
+
+
+        <!-- ==============================
+             SCANNER CARD
+        =============================== -->
+
+        <section class="card">
+
+            <div class="card-head">
+
+                <div>
+
+                    <small>
+                        BEAUTYSNAP AI
+                    </small>
+
+                    <h2>
+                        Cosmetic Image Scanner 💕
+                    </h2>
+
+                </div>
+
+                <span class="ready">
+                    ● AI READY
+                </span>
+
+            </div>
+
+
+            <div class="grid">
+
+
+                <!-- ==============================
+                     IMAGE / WEBCAM
+                =============================== -->
+
+                <div class="scanner-area">
+
+                    <div id="preview" class="preview">
+
+                        <div class="empty">
+
+                            <div class="icon">
+                                📸
+                            </div>
+
+                            <h3>
+                                Sedia untuk scan!
+                            </h3>
+
+                            <p>
+                                Gunakan webcam atau upload gambar produk kosmetik.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- BUTTON -->
+
+                    <div class="buttons">
+
+                        <button id="camera" class="primary">
+                            📷 <b>Webcam</b>
+                        </button>
+
+                        <button id="upload" class="secondary">
+                            🖼️ <b>Upload Image</b>
+                        </button>
+
+                        <input
+                            id="file"
+                            type="file"
+                            accept="image/*"
+                            hidden
+                        >
+
+                    </div>
+
+
+                    <button id="stop" class="stop">
+                        ⏹ Berhenti Webcam
+                    </button>
+
+                </div>
+
+
+                <!-- ==============================
+                     PREDICTION
+                =============================== -->
+
+                <aside>
+
+                    <div class="result-title">
+                        💗 AI PREDICTION
+                    </div>
+
+
+                    <div class="resultbox">
+
+                        <small>
+                            Prediction
+                        </small>
+
+                        <h2 id="result">
+                            Belum ada gambar
+                        </h2>
+
+
+                        <div class="row">
+
+                            <span>
+                                Confidence
+                            </span>
+
+                            <strong id="score">
+                                0%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="meter">
+
+                            <i id="fill"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- STATUS -->
+
+                    <div class="status-box">
+
+                        <span class="status-label">
+                            ● System Status
+                        </span>
+
+                        <strong id="predictionStatus">
+                            Waiting for image
+                        </strong>
+
+                    </div>
+
+
+                    <!-- OTHER PREDICTIONS -->
+
+                    <div class="other">
+                        Other Predictions
+                    </div>
+
+
+                    <div id="list">
+
+                        <p class="muted">
+                            Prediction akan muncul di sini.
+                        </p>
+
+                    </div>
+
+
+                    <!-- RESET -->
+
+                    <button id="reset" class="reset">
+                        ↻ Reset
+                    </button>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             INFORMATION
+        =============================== -->
+
+        <section class="tips">
+
+            <div>
+
+                <span>
+                    📸
+                </span>
+
+                <b>
+                    Clear Image
+                </b>
+
+                <p>
+                    Pastikan produk berada di tengah gambar.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    💡
+                </span>
+
+                <b>
+                    Good Lighting
+                </b>
+
+                <p>
+                    Gunakan pencahayaan yang baik untuk prediction.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    🤖
+                </span>
+
+                <b>
+                    AI Prediction
+                </b>
+
+                <p>
+                    Confidence bergantung kepada model AI.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==============================
+         FOOTER
+    =============================== -->
+
+    <footer>
+
+        Made with ♡ · BeautySnap AI
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
